@@ -1,0 +1,24 @@
+Basic Operation Commands:
+#terraform init -upgrade
+##terraform init -input=false
+
+#terraform plan -auto-approve
+##terraform plan -out=tfplan -input=false -var-file='dev.tfvars
+
+#terraform validate
+##terraform apply -auto-approve
+
+#terraform destroy -auto-approve
+##terraform apply -input=false tfplan
+
+#terraform graph | dot -Tpng > mygraph.png
+REF:https://lnkd.in/g5d5xrae
+
+
+wget https://github.com/aquasecurity/tfsec/releases/download/v1.15.2/tfsec-linux-amd64
+chmod +x *
+./tfsec-linux-amd64
+
+
+wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
+sudo trivy fs --format template --template "@html.tpl" -o report.html --ignore-unfixed --security-checks vuln,config --severity HIGH,CRITICAL,MEDIUM .
